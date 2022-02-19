@@ -1,17 +1,14 @@
 import React from "react";
 
-function Main() {
+function Home() {
   return (
     <div>
-
       login page
       <p>Sdfsdfsdfsdfsd</p>
-
       Main
       <p>asdasdsads</p>
-
     </div>
   );
 }
 
-export default Main;
+export default Home;
