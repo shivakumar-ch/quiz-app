@@ -1,12 +1,13 @@
-import React from "react";
+import { Container, Box } from "@mui/material";
 
 function Home() {
   return (
     <div>
-      login page
-      <p>Sdfsdfsdfsdfsd</p>
-      Main
-      <p>asdasdsads</p>
+      <Container>
+        <Box>
+          <h1>hai</h1>
+        </Box>
+      </Container>
     </div>
   );
 }
