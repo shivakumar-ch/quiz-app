@@ -1,4 +1,6 @@
-import React from "react";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 import {
   Box,
@@ -9,7 +11,29 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function index() {
+export default function Login() {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [num, setNum] = useState("");
+
+  useEffect(() => {
+    const token = Cookies.get("quizJwtToken");
+    if (token !== undefined) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const logIn = () => {
+    Cookies.set("quizJwtToken", "YOU_ARE_AUTHORISED");
+    console.log(name, num, "-------");
+    navigate("/");
+  };
+
+  const getName = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    setName(e.target.value);
+  const getNum = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    setNum(e.target.value);
+
   return (
     <Box sx={{ backgroundColor: "#94a3a8" }}>
       <Container
@@ -34,6 +58,8 @@ export default function index() {
             Let's Begin !!!.
           </Typography>
           <TextField
+            value={name}
+            onChange={getName}
             size="small"
             variant="outlined"
             color="info"
@@ -42,6 +68,8 @@ export default function index() {
             sx={{ mb: 2, mt: 2 }}
           />
           <TextField
+            value={num}
+            onChange={getNum}
             size="small"
             variant="outlined"
             color="info"
@@ -49,7 +77,7 @@ export default function index() {
             fullWidth
             sx={{ mb: 2 }}
           />
-          <Button variant="contained" color="info">
+          <Button onClick={logIn} variant="contained" color="info">
             Join
           </Button>
         </Card>

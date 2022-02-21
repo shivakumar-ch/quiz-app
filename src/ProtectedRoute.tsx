@@ -1,7 +1,14 @@
-import React from "react";
+import Cookies from "js-cookie";
+import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRoute() {
-  return <div>ProtectedRoute</div>;
+  const token = Cookies.get("quizJwtToken");
+
+  if (token !== undefined) {
+    return <Outlet />;
+  } else {
+    return <Navigate to={"/login"} />;
+  }
 }
 
 export default ProtectedRoute;
