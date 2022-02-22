@@ -25,7 +25,6 @@ export default function Login() {
 
   const logIn = () => {
     Cookies.set("quizJwtToken", "YOU_ARE_AUTHORISED");
-    console.log(name, num, "-------");
     navigate("/");
   };
 
@@ -72,6 +71,7 @@ export default function Login() {
             onChange={getNum}
             size="small"
             variant="outlined"
+            type="number"
             color="info"
             label="Enter Number"
             fullWidth
