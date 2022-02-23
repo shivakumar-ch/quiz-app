@@ -1,19 +1,19 @@
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 
 function Home() {
-  const loginnnn = async () => {
-    const posts = await fetch("http://localhost:3001/login", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        name1: "ashok",
-      }),
-    });
-    const a = await posts.json();
-    console.log(a);
-  };
+  // const loginnnn = async () => {
+  //   const posts = await fetch("http://localhost:3001/login", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name1: "ashok",
+  //     }),
+  //   });
+  //   const a = await posts.json();
+  //   console.log(a);
+  // };
 
   return (
     <div

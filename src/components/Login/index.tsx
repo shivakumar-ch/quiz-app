@@ -45,7 +45,7 @@ export default function Login() {
       >
         <Card
           sx={{
-            height: "200px",
+            height: "250px",
             width: "520px",
             p: 4,
             pl: 5,
