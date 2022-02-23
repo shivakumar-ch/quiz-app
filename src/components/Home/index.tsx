@@ -1,6 +1,24 @@
-import { Container, Box } from "@mui/material";
+import { Container, Box, Grid, Card, Typography } from "@mui/material";
+import { useEffect } from "react";
+import { useViewportScroll } from "framer-motion";
 
 function Home() {
+  const scro = useViewportScroll();
+
+  const card = {
+    height: "400px",
+    boxShadow: "3px 3px 5px 5px #6ca1eb",
+    background: "rgba(255,255,255,0.2)",
+    borderRadius: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const scrollFunc = () => {
+    console.log(scro.scrollYProgress.get(), "----");
+  };
+
   const loginnnn = async () => {
     const posts = await fetch("http://localhost:3001/login", {
       method: "POST",
@@ -18,26 +36,24 @@ function Home() {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "300vh",
         width: "100vw",
         background: "linear-gradient(45deg,#78c0ff,#bebdff)",
       }}
+      onWheel={scrollFunc}
     >
-      <Container
-        sx={
-          {
-            // height: "100vh",
-            // display: "grid",
-            // placeItems: "center",
-            //  backgroundColor: "cyan",
-          }
-        }
+      <Box
+        sx={{
+          pl: 10,
+          pr: 10,
+          pt: 5,
+        }}
       >
         <div
           style={{
             position: "relative",
-            top: "5px",
-            left: "-120px",
+            top: "-35px",
+            left: "-130px",
             width: "250px",
             height: "250px",
             borderRadius: "50%",
@@ -50,7 +66,20 @@ function Home() {
           style={{
             position: "relative",
             top: "5px",
-            right: "-120px",
+            left: "50%",
+            width: "250px",
+            height: "250px",
+            borderRadius: "50%",
+            background:
+              "linear-gradient(30deg,rgba(255,255,255,0.4),rgba(0,100,200,0.2))",
+            zIndex: 2,
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            top: "-5px",
+            left: "300px",
             width: "250px",
             height: "250px",
             borderRadius: "50%",
@@ -63,7 +92,7 @@ function Home() {
           style={{
             position: "relative",
             top: "5px",
-            left: "-60px",
+            left: "200px",
             width: "150px",
             height: "150px",
             borderRadius: "50%",
@@ -72,11 +101,11 @@ function Home() {
             zIndex: 2,
           }}
         />
-        <div
-          style={{
+        <Box
+          sx={{
             position: "absolute",
             top: "100px",
-            minWidth: "80%",
+            width: "90%",
             minHeight: "600px",
             background:
               "linear-gradient(30deg,rgba(255,255,255,0.4),rgba(0,100,200,0.1))",
@@ -87,8 +116,48 @@ function Home() {
           }}
         >
           <h1>hai</h1>
-        </div>
-      </Container>
+        </Box>
+        <Box
+          sx={{
+            position: "relative",
+            top: "-100px",
+            p: 4,
+            backdropFilter: "blur(5px)",
+            mt: 2,
+            maxWidth: "100%",
+            border: "3px solid #6ca1eb",
+            borderRadius: "10px",
+            background:
+              "linear-gradient(30deg,rgba(255,255,255,0.4),rgba(0,100,200,0.1))",
+
+            zIndex: 10,
+          }}
+        >
+          <Grid container spacing={3}>
+            <Grid item xs={4}>
+              <Card sx={card}>
+                <Typography variant="body1" color="primary">
+                  hai
+                </Typography>
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Card sx={card}>
+                <Typography variant="body1" color="primary">
+                  hai
+                </Typography>
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Card sx={card}>
+                <Typography variant="body1" color="primary">
+                  hai
+                </Typography>
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
     </div>
   );
 }
