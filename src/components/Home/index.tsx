@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import { Container } from "@mui/material";
 
 function Home() {
@@ -15,13 +15,13 @@ function Home() {
   //   const a = await posts.json();
   //   console.log(a);
   // };
-=======
+// =======
 import { Container, Box, Grid, Card, Typography } from "@mui/material";
 import { useEffect } from "react";
-import { useViewportScroll } from "framer-motion";
+// import { useViewportScroll } from "framer-motion";
 
 function Home() {
-  const scro = useViewportScroll();
+  // const scro = useViewportScroll();
 
   const card = {
     height: "400px",
@@ -50,7 +50,7 @@ function Home() {
     const a = await posts.json();
     console.log(a);
   };
->>>>>>> 0e1aad150d0c93667f631b4dcc5ed9fd8dcdbdc7
+// >>>>>>> 0e1aad150d0c93667f631b4dcc5ed9fd8dcdbdc7
 
   return (
     <div
