@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-import { Container } from "@mui/material";
+// <<<<<<< HEAD
+import { Container, Box, Grid, Card, Typography } from "@mui/material";
 
-function Home() {
+// function Home() {
   // const loginnnn = async () => {
   //   const posts = await fetch("http://localhost:3001/login", {
   //     method: "POST",
@@ -15,13 +15,11 @@ function Home() {
   //   const a = await posts.json();
   //   console.log(a);
   // };
-=======
-import { Container, Box, Grid, Card, Typography } from "@mui/material";
-import { useEffect } from "react";
-import { useViewportScroll } from "framer-motion";
+// =======
+// import { useViewportScroll } from "framer-motion";
 
 function Home() {
-  const scro = useViewportScroll();
+  // const scro = useViewportScroll();
 
   const card = {
     height: "400px",
@@ -33,9 +31,9 @@ function Home() {
     alignItems: "center",
   };
 
-  const scrollFunc = () => {
-    console.log(scro.scrollYProgress.get(), "----");
-  };
+  // const scrollFunc = () => {
+  //   console.log(scro.scrollYProgress.get(), "----");
+  // };
 
   const loginnnn = async () => {
     const posts = await fetch("http://localhost:3001/login", {
@@ -50,7 +48,7 @@ function Home() {
     const a = await posts.json();
     console.log(a);
   };
->>>>>>> 0e1aad150d0c93667f631b4dcc5ed9fd8dcdbdc7
+// >>>>>>> 0e1aad150d0c93667f631b4dcc5ed9fd8dcdbdc7
 
   return (
     <div
@@ -59,7 +57,7 @@ function Home() {
         width: "100vw",
         background: "linear-gradient(45deg,#78c0ff,#bebdff)",
       }}
-      onWheel={scrollFunc}
+      // onWheel={scrollFunc}
     >
       <Box
         sx={{
