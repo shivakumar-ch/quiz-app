@@ -1,7 +1,7 @@
 // <<<<<<< HEAD
-import { Container } from "@mui/material";
+import { Container, Box, Grid, Card, Typography } from "@mui/material";
 
-function Home() {
+// function Home() {
   // const loginnnn = async () => {
   //   const posts = await fetch("http://localhost:3001/login", {
   //     method: "POST",
@@ -16,8 +16,6 @@ function Home() {
   //   console.log(a);
   // };
 // =======
-import { Container, Box, Grid, Card, Typography } from "@mui/material";
-import { useEffect } from "react";
 // import { useViewportScroll } from "framer-motion";
 
 function Home() {
@@ -33,9 +31,9 @@ function Home() {
     alignItems: "center",
   };
 
-  const scrollFunc = () => {
-    console.log(scro.scrollYProgress.get(), "----");
-  };
+  // const scrollFunc = () => {
+  //   console.log(scro.scrollYProgress.get(), "----");
+  // };
 
   const loginnnn = async () => {
     const posts = await fetch("http://localhost:3001/login", {
@@ -59,7 +57,7 @@ function Home() {
         width: "100vw",
         background: "linear-gradient(45deg,#78c0ff,#bebdff)",
       }}
-      onWheel={scrollFunc}
+      // onWheel={scrollFunc}
     >
       <Box
         sx={{
