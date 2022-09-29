@@ -1,25 +1,8 @@
 // <<<<<<< HEAD
-import { Container, Box, Grid, Card, Typography } from "@mui/material";
+import { Box, Grid, Card, Typography } from "@mui/material";
 
-// function Home() {
-  // const loginnnn = async () => {
-  //   const posts = await fetch("http://localhost:3001/login", {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name1: "ashok",
-  //     }),
-  //   });
-  //   const a = await posts.json();
-  //   console.log(a);
-  // };
-// =======
-// import { useViewportScroll } from "framer-motion";
 
 function Home() {
-  // const scro = useViewportScroll();
 
   const card = {
     height: "400px",
@@ -31,25 +14,33 @@ function Home() {
     alignItems: "center",
   };
 
-  // const scrollFunc = () => {
-  //   console.log(scro.scrollYProgress.get(), "----");
-  // };
 
   const loginnnn = async () => {
     const posts = await fetch("http://localhost:3001/login", {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        name1: "ashok",
-      }),
-    });
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Access-Control-Request-Headers': '*',
+      //   'api-key': 'SFx9SXmU0cnqig7XHn1zlCl9AmnhPpvI2U7xLVITD5Aw2qonJvw4L2uat4XopetF',
+      // },
+      // body: JSON.stringify({
+      //   "collection": "data",
+      //   "database": "myFirstDatabase",
+      //   "dataSource": "quiz-app",
+      //   "projection": {
+      //     "_id": 1
+      //   }
+      // }),
+      body:JSON.stringify({name:"Ashok"})
+    }
+    );
     const a = await posts.json();
     console.log(a);
   };
-// >>>>>>> 0e1aad150d0c93667f631b4dcc5ed9fd8dcdbdc7
 
+
+
+  loginnnn()
   return (
     <div
       style={{
@@ -57,7 +48,6 @@ function Home() {
         width: "100vw",
         background: "linear-gradient(45deg,#78c0ff,#bebdff)",
       }}
-      // onWheel={scrollFunc}
     >
       <Box
         sx={{
